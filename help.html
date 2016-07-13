@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: #537DB7;
+			}
+			#wrap{
+				width: 500px;
+				height: 600px;
+				margin: 0 auto;
+				background: white;
+				cursor: pointer;
+				overflow: hidden;
+			}
+			h2{
+				height: 80px;
+				line-height: 80px;
+				text-align: center;
+				font-family:"宋体";
+			}
+			h2 strong{
+				width: 200px;
+				height: 80px;
+				display: inline-block;
+				position: relative;
+			}
+			h2 em{
+				position: absolute;
+				left: 0;
+				top: -60px;
+			}
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				width: 470px;
+				padding: 15px;
+			}
+			li{
+				line-height: 30px;
+				border-bottom: 1px dashed #000;
+				font-size: 18px;
+				margin-bottom: 10px;
+			}
+			li span{
+				position: relative;
+			}
+			li em{
+				font-style: normal;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			a{
+				width: 202px;
+				height: 52px;
+				display: inline-block;
+				text-decoration: none;
+				margin-left: 149px;
+				position: relative;
+			}
+			#left{
+				width: 100px;
+				border: 1px solid #000;
+				line-height: 50px;
+				font-size: 14px;
+				border-radius: 5px 0px 0px 5px;
+				color: #000;
+				background: #21a8e7;
+				text-align: right;
+				border-right: none;
+				position: absolute;
+				left: -260px;
+			}
+			#right{
+				width: 100px;
+				border: 1px solid #000;
+				line-height: 50px;
+				font-size: 14px;
+				border-radius: 0px 5px 5px 0;
+				color: #000;
+				background: #21a8e7;
+				text-align: left;
+				border-left: none;
+				position: absolute;
+				left: 360px;
+			}
+			#box1,#box2,#box3{
+				width: 0px;
+				height: 0px;
+				border-radius:50%;
+				-display: none;
+				position: absolute;
+				border: 1px solid #035e8c;
+				opacity: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<h2><strong>涂鸦帮助</strong></h2>
+			<ul>
+				<li>1.<span>可以选择画笔的颜色进行涂鸦。</span></li>
+				<li>2.<span>可以选择画笔的大小进行涂鸦。</span></li>
+				<li>3.<span>点击上一步或者下一步，将会对画布进行撤销或者还原。</span></li>
+				<li>4.<span>点击橡皮擦，可以擦除画板上的内容。</span></li>
+				<li>5.<span>点击清除，将会清除画板上的所有的内容。</span></li>
+				<li>6.<span>点击提交我的作画，当前所画将会保存在我的作品中。</span></li>
+				<li>7.<span>点击我的作品可以查看当前保存的所有作品。</span></li>
+				<li>8.<span>长按一幅画，将会出现删除图标，选择删除或者不删除。</span></li>
+				<li>9.<span>可以拖拽作品，进行交换位置。</span></li>
+			</ul>
+			<a href="index.html">
+				<div id="left">
+					返
+				</div>
+				<div id="right">
+					回
+				</div>
+			</a>
+			<div id="box1"></div>
+			<div id="box2"></div>
+			<div id="box3"></div>
+		</div>
+		<script src="js/oneself.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var wrap = document.getElementById('wrap');
+			var box1 = document.getElementById('box1');
+			var box2 = document.getElementById('box2');
+			var box3 = document.getElementById('box3');
+			var oSpan = document.getElementsByTagName('span');
+			var left = document.getElementById('left');
+			var right = document.getElementById('right');
+			
+			//alert(oSpan.length)
+			
+			mTween(left,{left:0},600,'linear');
+			mTween(right,{left:101},600,'linear');
+			
+			//蜻蜓点水效果
+			wrap.onclick = function (ev){
+				setTimeout(function (){
+					fn(box1,ev);
+				},100)
+				setTimeout(function (){
+					fn(box2,ev);
+				},200)
+				setTimeout(function (){
+					fn(box3,ev);
+				},300)
+				
+			}
+			function fn(obj,ev){
+				clearInterval(obj.timer);
+				var w = 0;
+				var h = 0;
+				var o = 100;
+				obj.timer =  setInterval(function (){
+					obj.style.width = w++ +'px';
+					obj.style.height = h++ + 'px';
+					obj.style.opacity = (o-=2)/100;
+					obj.style.left = ev.clientX -obj.offsetWidth/2 + 'px';
+					obj.style.top = ev.clientY -obj.offsetHeight/2 + 'px';
+					if(o == 0){
+						clearInterval(obj.timer);
+					}
+				},16);
+			}
+			
+			for(var i=0;i<oSpan.length;i++){
+				fn1(oSpan[i]);
+			}
+			
+			function fn1(obj){
+				var arrhtml = obj.innerHTML.split('');
+				for(var i=0;i<arrhtml.length;i++){
+					
+					arrhtml[i] = '<em>'+arrhtml[i]+'</em>';
+				}
+				obj.innerHTML = arrhtml.join('');
+				var oEms = obj.getElementsByTagName('em');
+				
+				var W = 18;
+				
+				for(var i=0;i<oEms.length;i++){
+					
+					oEms[i].style.left = W*i +'px';
+					
+					oEms[i].style.top = -6 +'px';
+					oEms[i].onmouseover = function (){
+						//this.style.top = 10 + 'px';
+						mTween(this,{'top':-15},50,'linear');
+					}
+					oEms[i].onmouseout = function (){
+						
+						mTween(this,{'top':-6},500,'linear');
+					}
+				}
+			}
+			
+			var oH2 = document.getElementsByTagName('h2')[0];
+			var oStrong = oH2.getElementsByTagName('strong')[0];
+			
+			var arrstronghtml = oStrong.innerHTML.split('');
+			
+			for(var i=0;i<arrstronghtml.length;i++){
+				arrstronghtml[i] = '<em>'+arrstronghtml[i]+'</em>';
+			}
+			oStrong.innerHTML = arrstronghtml.join('');
+			
+			var Ems = oStrong.getElementsByTagName('em');
+			
+			for(var i=0;i<Ems.length;i++){
+				Ems[i].style.left = i*30 +34 +'px';
+			}
+			startMove(Ems[0])
+			setTimeout(function (){
+				startMove(Ems[1])
+			},500);
+			setTimeout(function (){
+				startMove(Ems[2])
+			},800);
+			setTimeout(function (){
+				startMove(Ems[3])
+			},1000);
+			function startMove(obj){
+				var speed = 0;
+				var timer = null;
+				clearInterval(timer);
+				timer = setInterval(function (){
+					
+					speed+=3;
+					
+					var t = obj.offsetTop + speed;
+					if(t>0){
+						t = 0;
+						speed *= -1;
+						speed *=0.9;
+						if(Math.abs(speed)<=1){
+							clearInterval(timer);
+							speed = 0;
+						}
+					}
+					obj.style.top = t + 'px';
+					
+				},16)
+			}
+		</script>
+	</body>
+</html>

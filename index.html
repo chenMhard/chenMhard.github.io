@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: #537DB7;
+			}
+			#wrap{
+				width: 500px;
+				margin: 0 auto;
+				background: white;
+			}
+			#img{
+				width: 500px;
+				display: block;
+			}
+			#start{
+				width: 100%;
+				line-height: 50px;
+				background: #2ecc71;
+				border-radius:5px;
+				margin-top: 10px;
+				text-align: center;
+				color: white;
+				cursor: pointer;
+				display: block;
+				text-decoration: none;
+			}
+			#start span{
+				display: inline-block;
+				width: 13px;
+				height: 15px;
+				background: url(img/pen.jpg);
+			}
+			#help{
+				width: 100%;
+				height: 50px;
+				margin-top: 10px;
+			}
+			#help a{
+				text-decoration: none;
+				color: #000;
+			}
+			#scrawlrule{
+				width: 200px;
+				line-height: 50px;
+				float: left;
+				text-align: center;
+				border: 1px solid #000;
+				font-size: 14px;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+			#production{
+				width: 200px;
+				line-height: 50px;
+				float: right;
+				text-align: center;
+				border: 1px solid #000;
+				font-size: 14px;
+				cursor: pointer;
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<img src="img/tuya.jpg" id="img"/>
+			<a href="scrawl.html" id="start">
+				<span></span> 开始涂鸦
+			</a>
+			<div id="help">
+				<a href="help.html" id="scrawlrule">
+					涂鸦帮助
+				</a>
+				<a href="showImg.html" id="production">
+					查看作品
+				</a>
+			</div>
+		</div>
+	</body>
+</html>
