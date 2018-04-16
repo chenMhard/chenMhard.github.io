@@ -8,13 +8,14 @@
       这是demo
    </div>
    <script type="text/javascript">
-   	var imgUrl = 'http://www.baidu.com/images/share.jpg';  // 分享后展示的一张图片  
+   	var imgUrl = 'https://res.wx.qq.com/mpres/htmledition/images/advanced/dev_code3a7b38.jpg';  // 分享后展示的一张图片  
 var lineLink = 'http://www.baidu.com'; // 点击分享后跳转的页面地址  
 var descContent = "描述信息";  // 分享后的描述信息  
 var shareTitle = '标题';  // 分享后的标题  
-var appid = '';  //应用id,如果有可以填，没有就留空  
+var appid = 'wx9da9357b584cbe9d';  //应用id,如果有可以填，没有就留空  
   
 function shareFriend() {  
+	alert(222)
     WeixinJSBridge.invoke('sendAppMessage',{  
         "appid": appid,  
         "img_url": imgUrl,  
