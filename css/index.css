@@ -41,7 +41,8 @@ body{
 .active-desc{
 	line-height: 0.613333rem;
 	color: #e55356;
-	font-size: 0.32rem;
+	font-size: 0.36rem;
+	font-weight: bold;
 }
 .good-price{
 	font-size: 0.333333rem;
@@ -163,17 +164,17 @@ body{
 }
 .customer-name a{
 	display: inline-block;
-	height: 0.46rem;
+	height: 0.42rem;
 	padding: 0 0.106667rem;
 	font-size: 0.186667rem;
 	color: #333;
 	border: 1px solid #000;
-	line-height: 0.46rem;
+	line-height: 0.42rem;
 	background: #f6f6f6;
 }
 .remaining-time{
-	height: 0.426667rem;
-	line-height: 0.426667rem;
+	height: 0.52rem;
+	line-height: 0.52rem;
 	font-size: 0.24rem;
 }
 .remaining-time span em{
