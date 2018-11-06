@@ -334,10 +334,10 @@ $('.password-alert .mark').click(function(){
 
 var $input = $(".fake-box input");
 $("#pwd-input").on("input", function() {
-	
+	var len = 0;
 	var pwd = $(this).val().trim();
 	for (var i = 0, len = pwd.length; i < len; i++) {
-		console.log(i)
+
 		$input.eq("" + i + "").val(pwd[i]);
 	}
 	$input.each(function() {
@@ -352,6 +352,13 @@ $("#pwd-input").on("input", function() {
 	}
 });
 
+document.onkeydown = function (e) {
+	if(e.keyCode == 8){
+		$input.val('');
+	}
+   
+    
+}
 </script>
 
 
