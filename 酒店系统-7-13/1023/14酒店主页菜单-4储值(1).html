@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/swiper.min.css">
+    <link href="../static/css/common.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css">
+    <link href="static/css/style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>   <!-- 需引用 -->
+    <meta name="format-detection" content="telephone=no">       <!-- 需引用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">    <!-- 需引用 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">     <!-- 需引用 -->
+    <title>首页</title>
+    <script src="../static/js/jquery-1.7.2-min.js"></script>
+    <script src="../static/js/adaptive.js"></script>       <!-- 手机自适应插件必须引用在head -->
+    <script src="../static/js/date.js"></script>       <!-- 手机自适应插件必须引用在head -->
+</head>
+<body style="background:#f2f3f4;">
+<div class="recharge-page">
+    <div class="balance-content">
+    	<p class="title">可用余额(元)</p>
+    	<h3 class="balance">总金额<em>1231.00</em>元</h3>
+    	<p class="user-level">
+    		金卡用户
+    	</p>
+    	<div class="lately-consume">
+    		<span>10-12 在哪里消费900元</span>
+    		<img src="static/img/right_jt.png" />
+    	</div>
+    </div>
+    <div class="entry-recharge-sum">
+    	<h3>充值</h3>
+    	<div class="recharge-input-box">
+    		<span>输入金额</span>
+    		<p class="recharge-input">
+    			<em>¥</em>
+    			<input type="text" placeholder="请输入金额"/>
+    		</p>
+    	</div>
+    </div>
+    <div class="choose-recharge-sum">
+    	<ul>
+    		<li class="sum-item"> 
+    			50元
+    		</li>
+    		<li class="sum-item"> 
+    			100元
+    		</li>
+    		<li class="sum-item"> 
+    			50元
+    		</li>
+    		<li class="sum-item"> 
+    			50元
+    		</li>
+    		<li class="sum-item"> 
+    			50元
+    		</li>
+    		<li class="sum-item"> 
+    			50元
+    		</li>
+    		<li class="sum-item"> 
+    			50元
+    		</li>
+    		<li class="sum-item"> 
+    			50元
+    		</li>
+    		<li class="sum-item"> 
+    			50元
+    		</li>
+    	</ul>
+    	<button class="recharge-btn">充值</button>
+    </div>
+    <div class="recharge-success">
+    	<img src="../static/image/collection_icon.png" />
+    	<p>充值成功</p>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="../static/js/swiper.min.js"></script>
+<script type="text/javascript">
+$('.choose-recharge-sum li').click(function(){
+	$('.choose-recharge-sum li').removeClass('active');
+	$(this).addClass('active');
+});
+
+</script>
+
+
+

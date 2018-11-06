@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/swiper.min.css">
+    <link href="static/css/common.css" rel="stylesheet" type="text/css">
+    <link href="static/css/style.css" rel="stylesheet" type="text/css">
+    <link href="static/css/Lcalendar.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>   <!-- 需引用 -->
+    <meta name="format-detection" content="telephone=no">       <!-- 需引用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">    <!-- 需引用 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">     <!-- 需引用 -->
+    <title>首页</title>
+    <script src="static/js/jquery-1.7.2-min.js"></script>
+    <script src="static/js/adaptive.js"></script>
+    <script src="static/js/Lcalendar.min.js"></script>       <!--  日期选择插件 -->
+    <script src="static/js/date.js"></script>       <!-- 手机自适应插件必须引用在head -->
+</head>
+<body style="background:#f2f3f4;">
+    <div class="p20">
+        <div class="personal-msg personal-msg-second">
+            <div class="flex line">
+                <span class="font-nr">头像</span>
+                <img src="static/image/head_img2.png" class="head_img" />
+            </div>
+            <div class="flex line">
+                <span class="font-nr">姓名</span>
+                <input type="text" placeholder="王宁宁" class="text" ／>
+            </div>
+            <div class="flex line">
+                <span class="font-nr">性别</span>
+                <select class="sel">
+                    <option>男</option>
+                    <option>女</option>
+                </select>
+            </div>
+            <div class="flex line">
+                <span class="font-nr">常住地</span>
+                <p class="city"><span>广东 </span><span>深圳</span></p>
+            </div>
+            <div class="flex line bb0">
+                <span class="font-nr">生日</span>
+                <div class="more flex">
+                    <input type="text" name="start_date" id="start_date" value="2018-09-20" readonly="readonly" class="text auto mr20" />
+                    <span>狮子座</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script src="static/js/swiper.min.js"></script>
+<script type="text/javascript">
+//时间选择
+var calendar = new LCalendar();
+calendar.init({
+    'trigger': '#start_date', //标签id
+    'type': 'date', //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择,
+    'minDate': (new Date().getFullYear()-3) + '-' + 1 + '-' + 1, //最小日期
+    'maxDate': (new Date().getFullYear()+3) + '-' + 12 + '-' + 31 //最大日期
+});
+// var calendar = new LCalendar();
+// calendar.init({
+//     'trigger': '#start_time', //标签id
+//     'type': 'time', //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择,
+//     'minDate': (new Date().getFullYear()-3) + '-' + 1 + '-' + 1, //最小日期
+//     'maxDate': (new Date().getFullYear()+3) + '-' + 12 + '-' + 31 //最大日期
+// });
+
+
+
+
+
+
+
+</script>
+
+
+

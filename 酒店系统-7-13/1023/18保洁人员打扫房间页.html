@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/swiper.min.css">
+    <link href="../static/css/common.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css">
+    <link href="static/css/style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>   <!-- 需引用 -->
+    <meta name="format-detection" content="telephone=no">       <!-- 需引用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">    <!-- 需引用 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">     <!-- 需引用 -->
+    <title>首页</title>
+    <script src="../static/js/jquery-1.7.2-min.js"></script>
+    <script src="../static/js/adaptive.js"></script>       <!-- 手机自适应插件必须引用在head -->
+    <script src="../static/js/date.js"></script>       <!-- 手机自适应插件必须引用在head -->
+</head>
+<body style="background:#f2f3f4;">
+<div class="clean-room">
+    <div class="room-type">
+    	<ul>
+    		<li>
+    			<a class="active">全部(100)</a>
+    		</li>
+    		<li>
+    			<a>空净(100)</a>
+    		</li>
+    		<li>
+    			<a>空脏(100)</a>
+    		</li>
+    		<li>
+    			<a>续住脏房(100)</a>
+    		</li>
+    	</ul>
+    </div>
+    <div class="room-list-content">
+    	<div class="room-item">
+    		<p class="room-type-name">
+    			大床房
+    		</p>
+    		<ul class="room-list">
+    			<li class="active">
+    				1001
+    			</li>
+    			<li>
+    				1002
+    			</li>
+    			<li>
+    				1003
+    			</li>
+    			<li>
+    				1004
+    			</li>
+    		</ul>
+    	</div>
+    	<div class="room-item">
+    		<p class="room-type-name">
+    			大床房
+    		</p>
+    		<ul class="room-list">
+    			<li>
+    				1001
+    			</li>
+    			<li>
+    				1002
+    			</li>
+    			<li>
+    				1003
+    			</li>
+    			<li>
+    				1004
+    			</li>
+    		</ul>
+    	</div>
+    	<div class="room-item">
+    		<p class="room-type-name">
+    			大床房
+    		</p>
+    		<ul class="room-list">
+    			<li>
+    				1001
+    			</li>
+    			<li>
+    				1002
+    			</li>
+    			<li>
+    				1003
+    			</li>
+    			<li>
+    				1004
+    			</li>
+    		</ul>
+    	</div>
+    </div>
+    <div class="room-clean-status">
+    	<div class="mark"></div>
+    	<div class="operation-status">
+    		<h1>确认状态</h1>
+    		<p>
+    			<button>确认打扫房间</button>
+    		</p>
+    		<p class="cancle-operation">
+    			<button>取消</button>
+    		</p>
+    	</div>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="../static/js/swiper.min.js"></script>
+<script type="text/javascript">
+$('.room-type li a').click(function (){
+	$('.room-type li a').removeClass('active');
+	$(this).addClass('active');
+});
+$('.room-list li').click(function (){
+	if($(this).hasClass('active')){
+		$(this).removeClass('active');
+	}else{
+		$(this).addClass('active');
+	}
+	
+})
+$('.cancle-operation').click(function (){
+	$('.room-clean-status').hide();
+})
+$('.room-clean-status .mark').click(function (){
+	$('.room-clean-status').hide();
+})
+</script>
+
+
+
