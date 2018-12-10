@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/swiper.min.css">
+    <link href="../static/css/common.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css">
+    <link href="static/css/style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>   <!-- 需引用 -->
+    <meta name="format-detection" content="telephone=no">       <!-- 需引用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">    <!-- 需引用 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">     <!-- 需引用 -->
+    <title>首页</title>
+    <script src="../static/js/jquery-1.7.2-min.js"></script>
+    <script src="../static/js/adaptive.js"></script>       <!-- 手机自适应插件必须引用在head -->
+    <script src="../static/js/date.js"></script>       <!-- 手机自适应插件必须引用在head -->
+</head>
+<body style="background:#f2f3f4;">
+<div class="good-details">
+    <div class="good-details-page">
+    	<div class="good-details-sowing">
+    		<div class="swiper-container swiper-sowing">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide"><img src="../static/image/slider_banner.jpg"></div>
+		            <div class="swiper-slide"><img src="../static/image/slider_banner.jpg"></div>
+		            <div class="swiper-slide"><img src="../static/image/slider_banner.jpg"></div>
+		        </div>
+		        <!-- Add Pagination -->
+		        <div class="diy-pagination">
+		        	<span>
+		        		<i class="current-swiper">1</i>
+		        		/
+		        		<i class="totle-swiper"></i>
+		        	</span>
+		        </div>
+		    </div>
+    	</div>
+    	<div class="good-details-desc">
+    		<h3>这是商品名称</h3>
+    		<p>这是商品简介</p>
+    		<div>
+    			<em>297积分</em>
+    			<span>
+    				¥320
+    			</span>
+    			<a>
+    				已售<i>2521件</i>
+    			</a>
+    		</div>
+    	</div>
+    	<div class="good-introduce">
+    		<h3 class="good-introduce-title">
+    			<span>产品介绍</span>
+    		</h3>
+    		<div class="good-introduce-content">
+    			<img src="../static/image/hour_room_banner.jpg" />
+    			<img src="../static/image/hour_room_banner.jpg" />
+    			<img src="../static/image/hour_room_banner.jpg" />
+    			这里是富文本框内容
+    		</div>
+    	</div>
+    	<div class="buy-now-btn">
+    		立即购买
+    	</div>
+    </div>
+    <img src="../static/image/zf_icon.png" class="good-details-share" />
+</div>
+
+</body>
+</html>
+<script src="../static/js/swiper.min.js"></script>
+<script type="text/javascript">
+$('.totle-swiper').html($('.swiper-slide').length);
+var swiper = new Swiper('.swiper-sowing', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    autoplay: 2000,
+    onSlideChangeEnd: function(swiper){
+      $('.current-swiper').html(swiper.activeIndex+1);
+    }
+    
+});
+
+</script>
+
+
+

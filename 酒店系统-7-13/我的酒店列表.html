@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/swiper.min.css">
+    <link href="static/css/common.css" rel="stylesheet" type="text/css">
+    <link href="static/css/style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>   <!-- 需引用 -->
+    <meta name="format-detection" content="telephone=no">       <!-- 需引用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">    <!-- 需引用 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">     <!-- 需引用 -->
+    <title>首页</title>
+    <script src="static/js/jquery-1.7.2-min.js"></script>
+    <script src="static/js/adaptive.js"></script>       <!-- 手机自适应插件必须引用在head -->
+    <script src="static/js/date.js"></script>       <!-- 手机自适应插件必须引用在head -->
+    <script src="static/js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body  style="background:#f2f3f4;">
+<div class="search-hotel my-hotel-list"  data-role="page" id="ch_ad" >
+    <div class="list-item list_address">
+        <ul>
+            <li>
+                <div class="content flex">
+                    <img src="static/image/hotel_list_img.jpg" class="room-img" />
+                    <div class="nr">
+                        <p class="name">速8酒店(北京方庄桥店)</p>
+                        <div class="line-box">
+                            <div class="flex-end">
+                                <em class="zan"></em><span class="num">200</span><b>超棒</b>
+                            </div>
+                            <span class="col999 ml10">2000条点评 高档型</span>
+                        </div>
+                        <div class="flex line-second">
+                            <div class="distance">
+                                <p>劲松／潘家园</p>
+                            </div>
+                            <span class="price">¥<b>356</b>起</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="delete clearfix">
+                    <a href="=" class="btn">删除</a>
+                </div>
+            </li>
+            <li>
+                <div class="content flex">
+                    <img src="static/image/hotel_list_img.jpg" class="room-img" />
+                    <div class="nr">
+                        <p class="name">速8酒店(北京方庄桥店)</p>
+                        <div class="line-box">
+                            <div class="flex-end">
+                                <em class="zan"></em><span class="num">200</span><b>超棒</b>
+                            </div>
+                            <span class="col999 ml10">2000条点评 高档型</span>
+                        </div>
+                        <div class="flex line-second">
+                            <div class="distance">
+                                <p>劲松／潘家园</p>
+                            </div>
+                            <span class="price">¥<b>356</b>起</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="delete clearfix">
+                    <a href="=" class="btn">删除</a>
+                </div>
+            </li>
+            <li>
+                <div class="content flex">
+                    <img src="static/image/hotel_list_img.jpg" class="room-img" />
+                    <div class="nr">
+                        <p class="name">速8酒店(北京方庄桥店)</p>
+                        <div class="line-box">
+                            <div class="flex-end">
+                                <em class="zan"></em><span class="num">200</span><b>超棒</b>
+                            </div>
+                            <span class="col999 ml10">2000条点评 高档型</span>
+                        </div>
+                        <div class="flex line-second">
+                            <div class="distance">
+                                <p>劲松／潘家园</p>
+                            </div>
+                            <span class="price">¥<b>356</b>起</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="delete clearfix">
+                    <a href="=" class="btn">删除</a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script src="static/js/swiper.min.js"></script>
+<script type="text/javascript">
+$(document).on("pagecreate","#ch_ad",function(){
+  $(".list_address li .content").on("swipeleft",function(){
+    $(this).animate({left:'-1.2rem'});
+    $(this).find('a.edit').animate({right:'7.6rem'});
+    $(this).parent().find('.delete').animate({right:'0'});
+  });
+  $(".list_address li .content").on("swiperight",function(){
+    $(this).animate({left:'0rem'});
+    $(this).find('a.edit').animate({right:'1.2rem'});
+    $(this).parent().find('.delete').animate({right:'-1.2rem'});
+  });
+});
+
+
+
+
+</script>
+
+
+

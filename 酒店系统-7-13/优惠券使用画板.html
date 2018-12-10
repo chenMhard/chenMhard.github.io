@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/swiper.min.css">
+    <link href="static/css/common.css" rel="stylesheet" type="text/css">
+    <link href="static/css/style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>   <!-- 需引用 -->
+    <meta name="format-detection" content="telephone=no">       <!-- 需引用 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">    <!-- 需引用 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">     <!-- 需引用 -->
+    <title>首页</title>
+    <script src="static/js/jquery-1.7.2-min.js"></script>
+    <script src="static/js/adaptive.js"></script>       <!-- 手机自适应插件必须引用在head -->
+    <script src="static/js/date.js"></script>       <!-- 手机自适应插件必须引用在head -->
+</head>
+<body style="background:#f2f3f4;">
+<div class="coupon-nav">
+    <div class="content">
+        <ul class="clearfix">
+            <li>可使用<em></em></li>
+            <li>适用范围<em></em></li>
+            <li>最近领取<em></em></li>
+        </ul>
+        <div class="nav-down li1-nr">
+            <p class="line"><a href="">可使用</a></p>
+            <p class="line"><a href="">已用完</a></p>
+            <p class="line on"><a href="">已失效</a></p>
+        </div>
+        <div class="nav-down li2-nr clearfix">
+            <p class="line fl on"><a href="">全部</a></p>
+            <p class="line fl"><a href="">公寓</a></p>
+            <p class="line fl"><a href="">客栈</a></p>
+            <p class="line fl"><a href="">名宿</a></p>
+        </div>
+        <div class="nav-down li1-nr">
+            <p class="line on"><a href="">最近领取</a></p>
+            <p class="line"><a href="">最近到期</a></p>
+        </div>
+    </div>
+    <div class="bodymodal"></div>
+</div>
+<div style="height:0.9rem;"></div>
+<div class="coupon-main">
+    <div class="list-item">
+        <div class="toper">
+            <div class="line">
+                <div class="flex">
+                    <div class="orange-col">
+                        <span class="btn">满减券</span>
+                        <p class="price">¥<b>10</b></p>
+                    </div>
+                    <div class="cp-name">
+                        <p class="name">名宿</p>
+                        <p>名宿50元优惠券</p>
+                    </div>
+                </div>
+                <em class="down"></em>
+            </div>
+            <div class="down-nr">
+                已领取某某酒店的优惠券。优惠券可降低产品的价格，是一种常
+                见的消费者推广工具。优惠券可以印在杂志的插页上、或夹在报
+                纸中随报附送、或附在产品的包装上或放置在商品中让人索取。
+            </div>
+        </div>
+        <div class="line-second">
+            <span class="col999">有效期：2018.06.02-2018.06.22</span>
+            <a href="" class="orange-col">立即使用</a>
+        </div>
+    </div>
+    <div class="list-item">
+        <div class="toper">
+            <div class="line">
+                <div class="flex">
+                    <div class="orange-col">
+                        <span class="btn">满减券</span>
+                        <p class="price">¥<b>10</b></p>
+                    </div>
+                    <div class="cp-name">
+                        <p class="name">名宿</p>
+                        <p>名宿50元优惠券</p>
+                    </div>
+                </div>
+                <em class="down"></em>
+            </div>
+            <div class="down-nr">
+                已领取某某酒店的优惠券。优惠券可降低产品的价格，是一种常
+                见的消费者推广工具。优惠券可以印在杂志的插页上、或夹在报
+                纸中随报附送、或附在产品的包装上或放置在商品中让人索取。
+            </div>
+        </div>
+        <div class="line-second">
+            <span class="col999">有效期：2018.06.02-2018.06.22</span>
+            <a href="" class="orange-col">立即使用</a>
+        </div>
+    </div>
+    <div class="list-item invalid">
+        <div class="toper">
+            <div class="line">
+                <div class="flex">
+                    <div>
+                        <span class="btn">满减券</span>
+                        <p class="price">¥<b>10</b></p>
+                    </div>
+                    <div class="cp-name">
+                        <p class="name">名宿</p>
+                        <p>名宿50元优惠券</p>
+                    </div>
+                </div>
+                <em class="down"></em>
+            </div>
+            <div class="down-nr">
+                已领取某某酒店的优惠券。优惠券可降低产品的价格，是一种常
+                见的消费者推广工具。优惠券可以印在杂志的插页上、或夹在报
+                纸中随报附送、或附在产品的包装上或放置在商品中让人索取。
+            </div>
+        </div>
+        <div class="line-second">
+            <span class="col999">有效期：2018.06.02-2018.06.22</span>
+            <a href="">已失效</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="static/js/swiper.min.js"></script>
+<script type="text/javascript">
+
+
+$(function(){
+    $(".coupon-main .down").each(function(){
+        $(this).click(function(){
+            var downNr = $(this).parent().next();
+            if(downNr.is(":hidden")){
+                downNr.show();
+            }else{
+                downNr.hide();
+            }
+        });
+    });
+
+
+
+    $(".coupon-nav li").each(function(){
+        $(this).click(function(){
+            $(this).addClass("on").siblings().removeClass("on");
+            var index = $(this).index();
+            if($(".nav-down").eq(index).is(":hidden")){
+                $(".nav-down").hide();
+                $(".nav-down").eq(index).show();
+                $(".coupon-nav .bodymodal").show();
+            }else{
+                 $(".nav-down").hide();
+                 $(".coupon-nav .bodymodal").hide();
+            }
+            
+        });
+    });
+});
+
+
+
+
+
+
+
+</script>
+
+
+
