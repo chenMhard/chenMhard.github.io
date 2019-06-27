@@ -1,0 +1,53 @@
+/*样式重置*/
+html, body, form, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, em, address, a, input, textarea, label, span, strong, img {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+html, body {
+    background:#f3f3f3;
+    height: 100%;
+    width: 100%;
+}
+
+
+label, strong, span, a, i, em, b {
+    display: inline-block;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+i,em,strong,b,label {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol li, ul li {
+    position: relative;
+    list-style: none;
+}
+p{
+    line-height: 1.2;
+}
+
+dl dt {
+    font-weight: normal;
+}
+
+a, input, textarea, select, button {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+a{
+    color: #000;
+}
+/*input:-webkit-autofill {*/
+/*-webkit-box-shadow: 0 0 0 1000px white inset;*/
+/*}*/
+
